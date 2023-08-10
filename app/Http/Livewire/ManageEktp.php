@@ -6,7 +6,6 @@ use App\Models\Ektp;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
-use App\Exports\ProductsExport;
 use App\Imports\EktpImport;
 use Maatwebsite\Excel\Facades\Excel;
 
