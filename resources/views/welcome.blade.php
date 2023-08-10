@@ -28,7 +28,8 @@
                     </div>
                 @endif
 
-                    <livewire:manage-product />
+                    <livewire:pengajuan-ektp />
+                    {{-- <livewire:manage-product /> --}}
             </div>
         </div>
 

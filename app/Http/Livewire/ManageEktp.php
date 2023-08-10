@@ -2,16 +2,15 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Product;
+use App\Models\Ektp;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use App\Exports\ProductsExport;
-use App\Imports\ProductsImport;
 use App\Imports\EktpImport;
 use Maatwebsite\Excel\Facades\Excel;
 
-class ManageProduct extends Component
+class EktpProduct extends Component
 {
     use WithPagination,  WithFileUploads;
 
@@ -38,15 +37,15 @@ class ManageProduct extends Component
 
     public function export($ext)
     {
-        return Excel::download(new ProductsExport, "products.$ext");
+        return Excel::download(new EktpImport, "data-ektp.$ext");
     }
 
     public function render()
     {
-        $products = Product::paginate(10);
+        $ektps = Ektp::paginate(10);
 
-        return view('livewire.manage-product', [
-            'products' => $products
+        return view('livewire.manage-ektp', [
+            'ektps' => $ektps
         ]);
     }
 }

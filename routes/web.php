@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EktpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [ProductController::class, 'index']);
+Route::get('/ektp', [EktpController::class, 'index']);
 Route::get('/example', [ProductController::class, 'downloadtemplate'])->name('template');
